@@ -1,0 +1,8 @@
+.dropdown {
+  position: absolute;
+  padding: 20px;
+  background: #fff;
+  top: 9%;
+  right: 43%;
+  transform: translate(50%, 0);
+}
