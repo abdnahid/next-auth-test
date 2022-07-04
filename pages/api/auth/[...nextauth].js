@@ -2,13 +2,15 @@ import NextAuth from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
 import FacebookProvider from 'next-auth/providers/facebook';
 import GoogleProvider from 'next-auth/providers/google';
-import EmailProvider from 'next-auth/providers/email';
+import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
+import clientPromise from './lib/mongodb';
 
 const options = {
   pages: {
-    signIn: '/blogs',
-    error: '/auth/error',
+    signIn: '/',
+    error: '/',
   },
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENTID,
