@@ -1,7 +1,9 @@
 import React from 'react';
 import { getSession } from 'next-auth/react';
-const Privacy = () => {
-  return <div>privacy policy</div>;
+
+const Profile = ({ session }) => {
+  console.log(session);
+  return <div>Profile</div>;
 };
 
 export const getServerSideProps = async (context) => {
@@ -11,7 +13,7 @@ export const getServerSideProps = async (context) => {
     return {
       redirect: {
         destination: '/',
-        parmanent: false,
+        permanent: false,
       },
     };
   }
@@ -20,4 +22,4 @@ export const getServerSideProps = async (context) => {
   };
 };
 
-export default Privacy;
+export default Profile;

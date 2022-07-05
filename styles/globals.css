@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 .theme-btn {
-  @apply px-5 py-1 rounded-md my-3 font-medium active:scale-90 duration-500 bg-button hover:bg-button-dark text-white;
+  @apply px-5 py-1 rounded-md my-3 font-medium active:scale-90 duration-300 border-2 border-button bg-button hover:scale-105 text-white;
+}
+.outline-btn {
+  @apply px-5 py-1 rounded-md my-3 font-medium active:scale-90 duration-300 border-2 border-button bg-transparent hover:scale-105 text-button;
 }
 .sign-btn {
-  @apply px-5 py-1 rounded-md my-3 font-medium active:scale-90 duration-500 bg-white hover:bg-button-dark;
+  @apply px-5 py-1 rounded-md my-3 font-medium active:scale-90 duration-300 hover:scale-105 text-white flex items-center space-x-3 cursor-pointer;
 }
 
 input[type='number']::-webkit-inner-spin-button,

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Banner from '../components/Banner';
 
 export default function Home() {
   return (
@@ -10,8 +11,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='bg-bodyBg min-h-screen flex items-center justify-center'>
-        <h1 className='text-3xl'>Welcome to Ovikkhon</h1>
+      <main className=''>
+        <Banner />
       </main>
 
       <footer>

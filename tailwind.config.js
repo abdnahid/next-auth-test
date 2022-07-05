@@ -17,6 +17,7 @@ module.exports = {
       },
       success: '#76BA99',
       error: '#FD5D5D',
+      transparent: 'rbba(255,255,255,0)',
     },
     extend: {},
   },

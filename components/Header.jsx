@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import HeaderDropdown from './HeaderDropdown';
 import { BsSearch } from 'react-icons/bs';
 
@@ -27,7 +27,12 @@ const Header = () => {
       </nav>
       <nav className='col-span-2 md:col-span-1 flex items-center'>
         <ul className='flex items-center space-x-3'>
-          <BsSearch className='' />
+          <li>
+            <BsSearch />
+          </li>
+          <li className='outline-btn'>
+            <button>Demo Quiz</button>
+          </li>
           {!session ? (
             <li
               className='relative'
@@ -38,22 +43,19 @@ const Header = () => {
               {viewDropdown && <HeaderDropdown />}
             </li>
           ) : (
-            <>
-              <li className=''>
-                <img
-                  src={session.user.image}
-                  alt='profile-photo'
-                  className='h-10 rounded-full'
-                />
-              </li>
-              <li className=''>
-                <button onClick={signOut}>Sign Out</button>
-              </li>
-            </>
+            <li
+              className='relative cursor-pointer py-2.5'
+              onMouseEnter={() => setViewDropdown(true)}
+              onMouseLeave={() => setViewDropdown(false)}
+            >
+              <img
+                src={session.user.image}
+                alt='profile-photo'
+                className=' max-h-10 rounded-full'
+              />
+              {viewDropdown && <HeaderDropdown />}
+            </li>
           )}
-          <li>
-            <button>Demo Quiz</button>
-          </li>
         </ul>
       </nav>
     </header>
